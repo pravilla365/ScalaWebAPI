@@ -10,14 +10,9 @@ java.sourceCompatibility = JavaVersion.VERSION_21
 
 repositories {
     mavenCentral()
-    ivy {
-        url = uri("https://repo.typesafe.com/typesafe/releases")
-    }
 }
 
 dependencies {
-    implementation("com.typesafe.play:play_2.13:3.0.0")
-    implementation("com.typesafe.play:play-json_2.13:2.10.0")
     implementation("org.scala-lang:scala-library:2.13.12")
 
     // XML Processing
@@ -36,15 +31,6 @@ dependencies {
 
 tasks.named<JavaCompile>("compileJava") {
     enabled = false
-}
-
-tasks {
-    compileScala {
-        scalaCompileOptions.apply {
-            isDeprecationWarnings = true
-            isUncheckedWarnings = true
-        }
-    }
 }
 
 java.sourceCompatibility = JavaVersion.VERSION_21
